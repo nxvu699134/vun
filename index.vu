@@ -1,0 +1,5 @@
+<html>
+  <body>
+    <p><span v-var="testVar"/></p>
+  </body>
+</html>
