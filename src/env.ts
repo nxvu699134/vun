@@ -41,9 +41,7 @@ export class Env {
   }
 
   find(name: string) {
-    console.log(this.stack);
     for (let i = 0; i < this.stack.length; i++) {
-      console.log(Object.getOwnPropertyNames(this.stack[i]));
       const v = this.stack[i].has(name);
       if (v) {
         return v;

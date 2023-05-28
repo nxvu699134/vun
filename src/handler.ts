@@ -18,6 +18,24 @@ class VarHandler implements IHandler {
   }
 }
 
+class IfHandler implements IHandler {
+  open(expander: Expander, node: Element) {
+    const shouldExpand = !!expander.env.find(node.attribs["v-if"]);
+    if (shouldExpand) {
+      expander.showTag(node, false);
+    }
+    return shouldExpand;
+  }
+
+  close(expander: Expander, node: Element) {
+    const didExpand = !!expander.env.find(node.attribs["v-if"]);
+    if (didExpand) {
+      expander.showTag(node, true);
+    }
+  }
+}
+
 export const HANDLERS = {
   "v-var": new VarHandler(),
+  "v-if": new IfHandler(),
 } as Record<string, IHandler>;
