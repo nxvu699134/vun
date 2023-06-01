@@ -1,4 +1,4 @@
-import { Node, Element } from "domhandler";
+import { Node, Element, Text } from "domhandler";
 
 abstract class Visitor {
   private root: Node;

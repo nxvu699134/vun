@@ -75,12 +75,13 @@ export class Expander extends Visitor {
   }
 
   close(node: Node): void {
-    if (isText(node) || !isTag(node)) {
+    if (!isTag(node)) {
       return;
     }
 
     if (this.hasHandler(node)) {
       this.getHandler(node).close(this, node);
+      return;
     }
 
     this.showTag(node, true);

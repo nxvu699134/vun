@@ -8,6 +8,7 @@ import { Element } from "domhandler";
 const main = () => {
   const vars = new Frame({
     testVar: "This is value of testVar",
+    testVar2: "Fucking 2",
     show: true,
     dontShow: false,
     names: ["This is", "freaking", "awesome"],
