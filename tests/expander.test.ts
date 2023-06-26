@@ -26,7 +26,7 @@ describe("Expander", () => {
     expander = new Expander(<Element>doc, vars);
   });
 
-  it("open should call for all tags", () => {
+  it("walk should return correct result", () => {
     expander.walk();
     const expectTemplate = `<html>
         <body>

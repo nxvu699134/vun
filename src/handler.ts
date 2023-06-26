@@ -35,7 +35,7 @@ class IfHandler implements IHandler {
   }
 }
 
-export const HANDLERS = {
+export const HANDLERS: Record<string, IHandler> = {
   "v-var": new VarHandler(),
   "v-if": new IfHandler(),
-} as Record<string, IHandler>;
+};
